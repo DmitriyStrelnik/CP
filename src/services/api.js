@@ -3,7 +3,7 @@ import store from '../store'
 import { logout } from '../store/actions/auth'
 
 const API = axios.create({
-    baseURL: 'http://127.0.0.1:3001',
+    baseURL: process.env.REACT_APP_BASE_URL,
     headers: {
         'Accept': 'application/json',
         'Authorization': `Bearer ${localStorage.getItem('token') || ''}`

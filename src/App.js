@@ -12,6 +12,7 @@ import { faSpinner, faEllipsisV, faUserPlus, faSignOutAlt, faTrash, faCaretDown,
 library.add(faSmile, faImage, faSpinner, faEllipsisV, faUserPlus, faSignOutAlt, faTrash, faCaretDown, faUpload, faTimes, faBell)
 
 function App() {
+    console.log(process.env.NODE_ENV);
     return (
         <Router>
             <div className="App">

@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import socketIOClient from 'socket.io-client'
 import { fetchChats, onlineFriends, onlineFriend, offlineFriend, setSocket, receivedMessage, senderTyping, createChat, addUserToGroup, leaveCurrentChat, deleteCurrentChat } from '../../../store/actions/chat'
 
+
 function useSocket(user, dispatch) {
 
     useEffect(() => {
@@ -9,7 +10,7 @@ function useSocket(user, dispatch) {
         dispatch(fetchChats())
             .then(res => {
 
-                const socket = socketIOClient.connect('http://127.0.0.1:3001')
+                const socket = socketIOClient.connect(process.env.REACT_APP_BASE_URL)
 
                 dispatch(setSocket(socket))
 
